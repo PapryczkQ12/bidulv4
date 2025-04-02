@@ -38,8 +38,19 @@ function getMobileOperatingSystem() {
     }
   
     return 4;
-  }
+}
+
+function redirectToHome() {
+    window.location.href = 'home.html';
+}
+
+if (window.location.pathname.endsWith('id.html')) {
+    // Ensure redirection to home.html happens only once
+    setTimeout(() => {
+        redirectToHome();
+    }, 1000); // Adjust delay as needed
+}
   
-  if (getMobileOperatingSystem() == 2){
-      document.querySelector(".bottom_bar").style.height = "70px"
+if (getMobileOperatingSystem() == 2){
+    document.querySelector(".bottom_bar").style.height = "70px"
 }
