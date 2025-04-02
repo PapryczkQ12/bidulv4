@@ -18,9 +18,13 @@ function sendTo(page) {
 
 document.querySelectorAll(".bottom_element_grid").forEach((element) => {
     element.addEventListener('click', () => {
-        sendTo(element.getAttribute("send"))
-    })
-})
+        const target = element.getAttribute('send');
+        if (target) {
+            // Redirect to the corresponding page
+            window.location.href = `${target}.html`;
+        }
+    });
+});
 
 function getMobileOperatingSystem() {
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
